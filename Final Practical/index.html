@@ -17,11 +17,218 @@ var content='TESTTESTTESTTEST';
 var cps=-tSpeed; var aw, mq; var fsz = parseInt(tHeight) - 4; function startticker(){if (document.getElementById) {var tick = '<div style="position:relative;width:'+tWidth+';height:'+tHeight+';overflow:hidden;background-color:'+tcolour+'"'; if (moStop) tick += ' onmouseover="cps=0" onmouseout="cps=-tSpeed"'; tick +='><div id="mq" style="position:absolute;right:0px;top:0px;font-family:'+fontfamily+';font-size:'+fsz+'px;white-space:nowrap;"><\/div><\/div>'; document.getElementById('ticker').innerHTML = tick; mq = document.getElementById("mq"); mq.style.right=(10+parseInt(tWidth))+"px"; mq.innerHTML='<span id="tx">'+content+'<\/span>'; aw = document.getElementById("tx").offsetWidth; lefttime=setInterval("scrollticker()",50);}} function scrollticker(){mq.style.right = (parseInt(mq.style.right)>(-10 - aw)) ?
 mq.style.right = parseInt(mq.style.right)+cps+"px": parseInt(tWidth)+10+"px";} window.onload=startticker;
     </script>
+
+    <style type="text/css">
+        body{
+            background-color:#ffff66;
+        }
+        .face{
+            background-color: #99e6ff;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            position:absolute;
+            top:30%;
+            left:40%;
+            animation-name: jump;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+
+        }
+        @keyframes jump{
+     
+             50%{transform: translateY(-30px);}
+
+         }
+        .ear-left{
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid #99e6ff;
+            transform: rotate(-64deg);
+            position: relative;
+            top:11%;
+            right:21%;    
+        }
+        .ear-right{
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid #99e6ff;
+            transform: rotate(64deg);
+            position: relative;
+            bottom:15%;
+            left:90%;
+            
+        }
+        .eyes-left{
+            background-color:#000000;
+            width:18px;
+            height: 18px;
+            border-radius:50%;
+            position: relative;
+            bottom:21%;
+            left:18%;
+        }
+        .eyes-right{
+            background-color:#000000;
+            width:18px;
+            height: 18px;
+            border-radius:50%;
+            position: relative;
+            bottom:38%;
+            left:62%;
+        }
+        .l1{
+            background-color:#ffffff;
+            width:8px;
+            height: 8px;
+            border-radius:50%;
+            position: relative;
+            top:12%;
+            left:10%;
+        }
+        .l2{
+            background-color:#ffffff;
+            width:3px;
+            height:3px;
+            border-radius:50%;
+            position: relative;
+            top:11%;
+            left:60%;
+        }
+        .r1{
+            background-color:#ffffff;
+            width:8px;
+            height: 8px;
+            border-radius:50%;
+            position: relative;
+            top:11%;
+            left:45%;
+        }
+        .r2{
+            background-color:#ffffff;
+            width:3px;
+            height:3px;
+            border-radius:50%;
+            position: relative;
+            top:12%;
+            left:10%;
+        }
+        .mouth{
+            width: 40px;
+            height: 20px; 
+            background-color:#000000;
+            
+             border-radius: 0 0 90px 90px;
+             position: relative;
+            bottom:28%;
+            left:29%;
+        }
+        .teeth-1{
+            width:0; 
+             height:0; 
+             border-top:10px solid #ffffff;
+             border-left:5px solid transparent;
+             border-right:5px solid transparent; 
+             position: relative;
+             left:6%;
+        }
+        .teeth-2{
+            width:0; 
+            height:0; 
+            border-top:10px solid #ffffff;
+            border-left:5px solid transparent;
+            border-right:5px solid transparent; 
+            position: relative;
+            left:64%;
+            bottom:50%;
+        }
+        .cheek-l{
+            background-color:#ff9999;
+            width:10px;
+            height:10px;
+            border-radius: 50%;
+            position: relative;
+            bottom:55%;
+            left:10%;
+        }
+        .cheek-r{
+            background-color:#ff9999;
+            width:10px;
+            height:10px;
+            border-radius: 50%;
+            position: relative;
+            bottom:64%;
+            left:78%;
+        }
+        .mark{
+             width:15px; 
+             height:15px; 
+              position: relative;
+              bottom:120%;
+              left:20%;
+             background:#ffffff;
+            margin:3px 0 0 30px;
+             -webkit-transform: rotate(-45deg);
+             transform: rotate(-45deg);
+             -webkit-transform-origin: 0 100%;
+             transform-origin: 0 100%;
+}
+.shadow{
+    width:50px;
+    height:25px;
+    background:rgb(179, 179, 179,0.25);
+    border-radius:50%;
+    position:absolute;
+    left:46.5%;
+    top:50%;
+    animation-name:shrink;
+    animation-duration:1.5s;
+    animation-iteration-count: infinite; 
+}
+@keyframes shrink{
+     
+             50%{transform: scale(2);}
+
+         }
+
+    </style>
+
+
 </head>
 <body>
     <div style="position:relative;/* width:300px; */height: 532px;overflow:hidden;background-color:#FFF;"><div id="mq" style="position: absolute; right: -80px; top: 0px; font-family: impact, sans-serif; font-size: 496px; white-space: nowrap;"><span id="tx">TESTTESTTESTTEST</span></div></div>
     <div id="ticker">
         scrolling
     </div>
+
+ <div class="face">
+        <div class="ear-left"></div>
+        <div class="ear-right">
+            
+        </div>
+        <div class="eyes-left">
+            <div class="l1"></div>
+            <div class="l2"></div>
+        </div>
+        <div class="eyes-right">
+            <div class="r1"></div>
+            <div class="r2"></div>
+        </div>
+        <div class="mouth">
+            <div class="teeth-1"></div>
+            <div class="teeth-2"></div>
+        </div>
+        <div class="cheek-l"></div>
+        <div class="cheek-r"></div>
+        <div class="mark"></div>
+    </div>
+    <div class="shadow"></div>
+
 </body>
+</html>    
+    </body>
 </html>
